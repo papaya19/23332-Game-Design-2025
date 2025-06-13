@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://5jmdxcft1g7u"]
+
+[ext_resource type="Script" uid="uid://8evkhjr32kn3" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cipri7f3d15w7" path="res://New Piskel-1.png (1).png" id="2_i3pqv"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(983.5, 980.5)
+scale = Vector2(0.0434571, 0.0434571)
+texture = ExtResource("2_i3pqv")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(962, 968, 963, 992, 960, 1006, 961, 1019, 974, 1022, 1000, 1023, 1008, 1018, 1010, 1010, 1016, 1010, 1014, 1008, 1008, 1008, 992, 1006, 988, 994, 998, 989, 1008, 989, 1019, 974, 1013, 961, 1014, 955, 1025, 953, 1015, 946, 1012, 939, 1003, 936, 994, 940, 991, 954, 990, 960, 980, 971)
+
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
