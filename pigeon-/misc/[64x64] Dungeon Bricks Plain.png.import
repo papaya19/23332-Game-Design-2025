@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkgn442kg0l84"
-path="res://.godot/imported/New Piskel-1.png.png-5bd417022c4f3e30e3bd272836ced644.ctex"
+uid="uid://0rqhvet82b42"
+path="res://.godot/imported/[64x64] Dungeon Bricks Plain.png-24d2fc61f70933b14a7fcabfc64f0193.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-5bd417022c4f3e30e3bd272836ced644.ctex"]
+source_file="res://misc/[64x64] Dungeon Bricks Plain.png"
+dest_files=["res://.godot/imported/[64x64] Dungeon Bricks Plain.png-24d2fc61f70933b14a7fcabfc64f0193.ctex"]
 
 [params]
 

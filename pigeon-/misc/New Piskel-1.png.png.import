@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr44mvllekrin"
-path="res://.godot/imported/CastleTilemap.png-c73ac8a9e3612130248a1c29bcf8f6db.ctex"
+uid="uid://dkgn442kg0l84"
+path="res://.godot/imported/New Piskel-1.png.png-7900d7d52ca852af2dfa1b2bbe230d8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CastleTilemap.png"
-dest_files=["res://.godot/imported/CastleTilemap.png-c73ac8a9e3612130248a1c29bcf8f6db.ctex"]
+source_file="res://misc/New Piskel-1.png.png"
+dest_files=["res://.godot/imported/New Piskel-1.png.png-7900d7d52ca852af2dfa1b2bbe230d8b.ctex"]
 
 [params]
 

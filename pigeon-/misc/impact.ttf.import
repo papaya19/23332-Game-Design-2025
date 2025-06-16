@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cqku5wk0owsk1"
-path="res://.godot/imported/impact.ttf-ca6791a3cb7d499d8678a02417e1c596.fontdata"
+path="res://.godot/imported/impact.ttf-db6b55a85ee5318ac5b78cc26e9c5d00.fontdata"
 
 [deps]
 
-source_file="res://impact.ttf"
-dest_files=["res://.godot/imported/impact.ttf-ca6791a3cb7d499d8678a02417e1c596.fontdata"]
+source_file="res://misc/impact.ttf"
+dest_files=["res://.godot/imported/impact.ttf-db6b55a85ee5318ac5b78cc26e9c5d00.fontdata"]
 
 [params]
 

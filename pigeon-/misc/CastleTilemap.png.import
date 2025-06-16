@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0rqhvet82b42"
-path="res://.godot/imported/[64x64] Dungeon Bricks Plain.png-50092a28ef7c7f1e8d6555b95fb6e2a0.ctex"
+uid="uid://cr44mvllekrin"
+path="res://.godot/imported/CastleTilemap.png-989eff9b1e1b6c4f4e53f0dc3da3a809.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://[64x64] Dungeon Bricks Plain.png"
-dest_files=["res://.godot/imported/[64x64] Dungeon Bricks Plain.png-50092a28ef7c7f1e8d6555b95fb6e2a0.ctex"]
+source_file="res://misc/CastleTilemap.png"
+dest_files=["res://.godot/imported/CastleTilemap.png-989eff9b1e1b6c4f4e53f0dc3da3a809.ctex"]
 
 [params]
 
