@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://er7qop5c7noe"]
+[gd_scene load_steps=9 format=4 uid="uid://er7qop5c7noe"]
 
 [ext_resource type="PackedScene" uid="uid://xkfxbuwnl7xa" path="res://scenes/background-sign.tscn" id="1_b1tjg"]
 [ext_resource type="Texture2D" uid="uid://cr44mvllekrin" path="res://misc/CastleTilemap.png" id="2_6tru6"]
 [ext_resource type="PackedScene" uid="uid://5jmdxcft1g7u" path="res://players/player.tscn" id="3_8jk4l"]
 [ext_resource type="PackedScene" uid="uid://c1jvhffk5caj" path="res://scenes/level 1-2.tscn" id="4_rdlor"]
+[ext_resource type="Texture2D" uid="uid://bj8db7m0ohghn" path="res://misc/snas.jpg" id="5_6tru6"]
 
 [sub_resource type="GDScript" id="GDScript_dopym"]
 
@@ -156,3 +157,7 @@ text = "ARROW KEYS OR WASD TO MOVE. SPACE TO JUMP."
 
 [node name="portal" parent="." instance=ExtResource("4_rdlor")]
 position = Vector2(991, 46)
+
+[node name="Snas" type="Sprite2D" parent="."]
+position = Vector2(1322, -17)
+texture = ExtResource("5_6tru6")
