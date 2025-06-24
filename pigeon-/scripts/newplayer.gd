@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
+#REMEMBER THAT control + / IS A COMMENT
+
 var speed = 200.0
 var jump_speed = -375.0
 var double_jump_speed = -450.0
+#yaaay double jump works!!!!!
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 

@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://basxw2rv6544a"]
+[gd_scene load_steps=8 format=4 uid="uid://basxw2rv6544a"]
 
 [ext_resource type="PackedScene" uid="uid://xkfxbuwnl7xa" path="res://scenes/background-sign.tscn" id="1_pp30k"]
 [ext_resource type="Texture2D" uid="uid://cr44mvllekrin" path="res://misc/CastleTilemap.png" id="2_1tujr"]
 [ext_resource type="PackedScene" uid="uid://5jmdxcft1g7u" path="res://players/player.tscn" id="3_b11do"]
-[ext_resource type="Script" uid="uid://cffshc1rj4b5f" path="res://scripts/pit.gd" id="4_b25ww"]
-[ext_resource type="Script" uid="uid://84e68p8jgyd4" path="res://scenes/portal.gd" id="5_1tujr"]
+[ext_resource type="PackedScene" uid="uid://b13gu2pv7vt0l" path="res://scenes/portal.tscn" id="4_pp30k"]
 
 [sub_resource type="GDScript" id="GDScript_dopym"]
 
@@ -130,12 +129,6 @@ terrain_set_0/terrain_0/name = "ground 0"
 terrain_set_0/terrain_0/color = Color(0, 0.738435, 0.38282, 1)
 sources/2 = SubResource("TileSetAtlasSource_ootpb")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xmu"]
-size = Vector2(542, 87.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b11do"]
-size = Vector2(98, 324)
-
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_dopym")
 
@@ -151,23 +144,13 @@ tile_set = SubResource("TileSet_ootpb")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 9)
 
-[node name="pit" type="Area2D" parent="."]
-script = ExtResource("4_b25ww")
-
-[node name="pittoo" type="CollisionShape2D" parent="pit"]
-position = Vector2(-53, 462.25)
-shape = SubResource("RectangleShape2D_21xmu")
-
-[node name="portal" type="Area2D" parent="."]
-script = ExtResource("5_1tujr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portal"]
-position = Vector2(1087, 181)
-shape = SubResource("RectangleShape2D_b11do")
-
 [node name="player" parent="." instance=ExtResource("3_b11do")]
 position = Vector2(-1638, -474)
 
-[connection signal="body_entered" from="pit" to="." method="_on_pit_body_entered"]
-[connection signal="body_entered" from="pit" to="pit" method="_on_body_entered"]
-[connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]
+[node name="portal" parent="." instance=ExtResource("4_pp30k")]
+position = Vector2(1053, 16)
+destination_scene = "uid://d32wluvifttde"
+
+[node name="portal2" parent="." instance=ExtResource("4_pp30k")]
+position = Vector2(-716, 456)
+destination_scene = "uid://basxw2rv6544a"

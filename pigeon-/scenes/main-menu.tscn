@@ -41,7 +41,7 @@ theme_override_colors/default_color = Color(1, 0.772549, 0, 1)
 text = "*no wings included"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-493, 143)
+position = Vector2(-385, 97)
 scale = Vector2(0.191895, 0.191895)
 texture = ExtResource("2_xg1py")
 
