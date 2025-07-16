@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw64olvn54de1"]
+
+[ext_resource type="Script" uid="uid://d434bh1by5j" path="res://spikes.gd" id="1_nrdsm"]
+[ext_resource type="Texture2D" uid="uid://b56fi3wk60w0q" path="res://misc/spikes.png" id="1_s0g1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrdsm"]
+size = Vector2(69, 42.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fhau"]
+size = Vector2(80, 52)
+
+[node name="spikes" type="Area2D" groups=["spikes"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_nrdsm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(159, 76)
+scale = Vector2(0.392019, 0.392019)
+texture = ExtResource("1_s0g1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(153, 81)
+shape = SubResource("RectangleShape2D_nrdsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(149, 79)
+shape = SubResource("RectangleShape2D_8fhau")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.9
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

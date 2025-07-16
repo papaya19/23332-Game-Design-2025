@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://b8h40igtr6cnd"]
+[gd_scene load_steps=8 format=4 uid="uid://b8h40igtr6cnd"]
 
 [ext_resource type="Texture2D" uid="uid://cr44mvllekrin" path="res://misc/CastleTilemap.png" id="1_m7ahb"]
 [ext_resource type="PackedScene" uid="uid://ce71ntpcdpcr1" path="res://players/newplayer.tscn" id="2_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://b13gu2pv7vt0l" path="res://scenes/portal.tscn" id="3_ru4tf"]
+[ext_resource type="PackedScene" uid="uid://dw64olvn54de1" path="res://spikes.tscn" id="4_dwgg1"]
 
 [sub_resource type="GDScript" id="GDScript_dopym"]
 
@@ -131,6 +132,10 @@ sources/2 = SubResource("TileSetAtlasSource_ootpb")
 
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_dopym")
+
+[node name="spikes" parent="." instance=ExtResource("4_dwgg1")]
+position = Vector2(-540, 291)
+destination_scene = "uid://b8h40igtr6cnd"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)

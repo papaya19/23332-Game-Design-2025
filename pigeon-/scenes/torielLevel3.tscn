@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ce71ntpcdpcr1" path="res://players/newplayer.tscn" id="4_1cfcb"]
 [ext_resource type="Texture2D" uid="uid://i3g381estqx2" path="res://misc/frog.jpg" id="5_1cfcb"]
 [ext_resource type="PackedScene" uid="uid://b13gu2pv7vt0l" path="res://scenes/portal.tscn" id="6_qnn00"]
-[ext_resource type="Texture2D" uid="uid://cw5gaoqqkw4n5" path="res://misc/deadpool.jpg" id="7_ygiq7"]
+[ext_resource type="Texture2D" uid="uid://ddefkux5wgejg" path="res://misc/deadpool.jpg" id="7_ygiq7"]
 
 [sub_resource type="GDScript" id="GDScript_dopym"]
 
@@ -147,7 +147,7 @@ tile_set = SubResource("TileSet_ootpb")
 position = Vector2(0, 9)
 
 [node name="player" parent="." instance=ExtResource("4_1cfcb")]
-position = Vector2(-1642, -480)
+position = Vector2(-1542, -518)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -413.0
@@ -171,5 +171,5 @@ position = Vector2(994, 12)
 destination_scene = "uid://jnuk86ypudv2"
 
 [node name="portal2" parent="." instance=ExtResource("6_qnn00")]
-position = Vector2(-690, 407)
+position = Vector2(-669, 497)
 destination_scene = "uid://d32wluvifttde"

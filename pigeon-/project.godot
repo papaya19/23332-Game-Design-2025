@@ -17,7 +17,13 @@ config/icon="res://misc/icon.svg"
 
 [display]
 
+window/size/viewport_width=1908
+window/size/viewport_height=970
 window/stretch/aspect="ignore"
+
+[global_group]
+
+spikes=""
 
 [input]
 
