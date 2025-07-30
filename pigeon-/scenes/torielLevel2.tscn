@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://basxw2rv6544a"]
+[gd_scene load_steps=9 format=4 uid="uid://basxw2rv6544a"]
 
 [ext_resource type="PackedScene" uid="uid://xkfxbuwnl7xa" path="res://scenes/background-sign.tscn" id="1_pp30k"]
 [ext_resource type="Texture2D" uid="uid://cr44mvllekrin" path="res://misc/CastleTilemap.png" id="2_1tujr"]
 [ext_resource type="PackedScene" uid="uid://5jmdxcft1g7u" path="res://players/player.tscn" id="3_b11do"]
 [ext_resource type="PackedScene" uid="uid://b13gu2pv7vt0l" path="res://scenes/portal.tscn" id="4_pp30k"]
+[ext_resource type="PackedScene" uid="uid://dqacyega03w74" path="res://scenes/torch.tscn" id="5_1tujr"]
 
 [sub_resource type="GDScript" id="GDScript_dopym"]
 
@@ -154,3 +155,19 @@ destination_scene = "uid://d32wluvifttde"
 [node name="portal2" parent="." instance=ExtResource("4_pp30k")]
 position = Vector2(-716, 456)
 destination_scene = "uid://basxw2rv6544a"
+
+[node name="torch" parent="." instance=ExtResource("5_1tujr")]
+position = Vector2(-591.5, 89)
+scale = Vector2(0.283482, 0.379464)
+
+[node name="torch2" parent="." instance=ExtResource("5_1tujr")]
+position = Vector2(-283, 87.5)
+scale = Vector2(0.325893, 0.395089)
+
+[node name="torch3" parent="." instance=ExtResource("5_1tujr")]
+position = Vector2(43, 89.5)
+scale = Vector2(0.352679, 0.395089)
+
+[node name="torch4" parent="." instance=ExtResource("5_1tujr")]
+position = Vector2(431, 106)
+scale = Vector2(0.316964, 0.352679)
