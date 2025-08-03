@@ -250,8 +250,7 @@ shape = SubResource("CapsuleShape2D_1y5ca")
 position = Vector2(701, 688)
 scale = Vector2(1.92188, 1.92188)
 sprite_frames = SubResource("SpriteFrames_3jr7u")
-animation = &"dash"
-frame_progress = 0.252793
+animation = &"death"
 
 [node name="Area2D" type="Area2D" parent="."]
 
