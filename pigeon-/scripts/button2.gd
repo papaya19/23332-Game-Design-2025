@@ -1,3 +1,7 @@
 extends Button
+@export var destination_scene: String = ""
 func _on_pressed():
-	get_tree().change_scene_to_file("res://scenes/torielLevel1.tscn")
+	call_deferred("change_scene")
+	
+func change_scene():
+	get_tree().change_scene_to_file(destination_scene)

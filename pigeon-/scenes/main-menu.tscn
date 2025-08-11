@@ -16,6 +16,14 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1261.0
+offset_top = -566.0
+offset_right = 1134.0
+offset_bottom = 608.0
+color = Color(0.259294, 0.259294, 0.259294, 1)
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = -187.0
