@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0qtbtp8m3g8r"]
+[gd_scene load_steps=5 format=3 uid="uid://c0qtbtp8m3g8r"]
 
 [ext_resource type="FontFile" uid="uid://cqku5wk0owsk1" path="res://misc/impact.ttf" id="1_hf3n6"]
-[ext_resource type="Texture2D" uid="uid://cipri7f3d15w7" path="res://misc/New Piskel-1.png (1).png" id="2_xg1py"]
+[ext_resource type="Script" uid="uid://djv27bjtiv165" path="res://scenes/main_menu.gd" id="1_xg1py"]
 [ext_resource type="Script" uid="uid://b4l6o4iwwka2f" path="res://scripts/button.gd" id="3_0u6b5"]
+[ext_resource type="AudioStream" uid="uid://ck1hsq2spl2lg" path="res://mus/menu.ogg" id="4_xg1py"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+script = ExtResource("1_xg1py")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -48,17 +50,12 @@ offset_bottom = -117.0
 theme_override_colors/default_color = Color(1, 0.772549, 0, 1)
 text = "*no wings included"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-385, 97)
-scale = Vector2(0.191895, 0.191895)
-texture = ExtResource("2_xg1py")
-
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = -166.0
 offset_top = -51.0
 offset_right = 130.0
-offset_bottom = 106.0
+offset_bottom = 61.0
 theme_override_colors/font_disabled_color = Color(1, 0.827451, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.827451, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.827451, 0, 1)
@@ -67,5 +64,20 @@ theme_override_fonts/font = ExtResource("1_hf3n6")
 theme_override_font_sizes/font_size = 62
 text = "START"
 script = ExtResource("3_0u6b5")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = -157.0
+offset_top = 116.0
+offset_right = 130.0
+offset_bottom = 219.0
+theme_override_colors/font_color = Color(0.878431, 0.768627, 0, 1)
+theme_override_fonts/font = ExtResource("1_hf3n6")
+theme_override_font_sizes/font_size = 43
+text = "SETTINGS"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xg1py")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

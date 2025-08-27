@@ -16,6 +16,11 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.849403, 0.703742, 0.293022, 1)
 config/icon="res://misc/icon.svg"
 
+[autoload]
+
+Audio="*res://audio.gd"
+Ruins="*res://ruins.tscn"
+
 [display]
 
 window/size/viewport_width=1908

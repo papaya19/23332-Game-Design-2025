@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp61b8ewhy1p0"]
+[gd_scene load_steps=3 format=3 uid="uid://bp61b8ewhy1p0"]
 
 [ext_resource type="FontFile" uid="uid://cqku5wk0owsk1" path="res://misc/impact.ttf" id="1_826fv"]
 [ext_resource type="Script" uid="uid://qacm5jwe0k7s" path="res://scripts/button2.gd" id="2_826fv"]
-[ext_resource type="Script" uid="uid://c2l3mxp5k3pd4" path="res://scenes/quit.gd" id="3_iiocm"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,35 +37,28 @@ text = "YOU WIN!"
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = -214.0
-offset_top = -175.0
+offset_top = -114.0
 offset_right = 180.0
-offset_bottom = -15.0
-theme_override_font_sizes/font_size = 50
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.799907, 0.666615, 0, 1)
+theme_override_fonts/font = ExtResource("1_826fv")
+theme_override_font_sizes/font_size = 62
 text = "PLAY AGAIN"
 script = ExtResource("2_826fv")
 destination_scene = "res://scenes/torielLevel1.tscn"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = -221.0
-offset_top = 6.0
-offset_right = 173.0
-offset_bottom = 166.0
-theme_override_font_sizes/font_size = 50
-text = "MENU"
+offset_left = -213.0
+offset_top = 159.0
+offset_right = 181.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(0.797447, 0.652015, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("1_826fv")
+theme_override_font_sizes/font_size = 62
+text = "MAIN MENU"
 script = ExtResource("2_826fv")
 destination_scene = "res://scenes/main-menu.tscn"
 
-[node name="Button3" type="Button" parent="."]
-layout_mode = 0
-offset_left = -226.0
-offset_top = 213.0
-offset_right = 168.0
-offset_bottom = 373.0
-theme_override_font_sizes/font_size = 50
-text = "QUIT"
-script = ExtResource("3_iiocm")
-
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
-[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]

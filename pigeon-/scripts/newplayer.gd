@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 var is_dashing = false
 var dash_timer = Timer.new()
 var dash_speed = 700.0
@@ -22,6 +23,9 @@ var dash_restriction_active = false
 
 var coyote_time_duration = 0.1
 var coyote_timer = Timer.new()
+
+## ADDED: Variable to remember if we were in the air last frame.
+var was_in_air = false
 
 func _ready():
 	add_child(dash_timer)
@@ -57,11 +61,14 @@ func _physics_process(delta):
 			# If horizontal momentum is nearly zero, clear the dash_end_velocity
 			if abs(current_velocity.x) < 5: # Small threshold
 				dash_end_velocity.x = 0
-
-		# Allow normal horizontal movement only if not dashing AND (no dash residual x-momentum OR player provides input)
-		# This is the key change: player input should override deceleration
+		
 		if dash_end_velocity.x == 0 or input_direction != 0:
 			current_velocity.x = input_direction * speed
+
+	velocity = current_velocity
+	move_and_slide() # Collision states are updated here. Checks must happen AFTER.
+
+	## MODIFIED: Plays a sound on landing instead of printing a message.
 
 	# Character orientation
 	if input_direction < 0:
@@ -71,7 +78,7 @@ func _physics_process(delta):
 
 	# Grounding and state resets
 	if is_on_floor():
-		if abs(current_velocity.x) > 10:
+		if abs(velocity.x) > 10:
 			$AnimatedSprite2D.play("walking")
 		else:
 			$AnimatedSprite2D.play("idle")
@@ -80,7 +87,7 @@ func _physics_process(delta):
 		dash_restriction_active = false
 		jump_counter = 0
 		coyote_timer.stop()
-		dash_end_velocity = Vector2.ZERO # Clear all residual velocity when grounded
+		dash_end_velocity = Vector2.ZERO
 	else:
 		if !is_dashing:
 			$AnimatedSprite2D.play("jumping")
@@ -94,8 +101,9 @@ func _physics_process(delta):
 
 	# Jump Logic
 	if Input.is_action_just_pressed("jump") and jump_counter < 1 and not dash_restriction_active:
+		Audio.play("res://sounds/hero_jump.wav")
 		if is_on_floor() or not coyote_timer.is_stopped():
-			current_velocity.y = jump_speed
+			velocity.y = jump_speed
 			jump_counter += 1
 			coyote_timer.stop()
 			if is_dashing:
@@ -103,6 +111,7 @@ func _physics_process(delta):
 
 	# Dash Initiation Logic
 	if Input.is_action_just_pressed("dash") and not is_dashing and not dash_restriction_active:
+		Audio.play("res://sounds/dash.wav")
 		var can_initiate_dash = false
 		if is_on_floor():
 			can_initiate_dash = true
@@ -128,8 +137,8 @@ func _physics_process(delta):
 				actual_dash_speed *= diagonal_dash_speed_modifier
 
 			dash_timer.start()
-			current_velocity = dash_direction * actual_dash_speed
-			dash_end_velocity = Vector2.ZERO # Clear residual from *previous* dash when starting a *new* one
+			velocity = dash_direction * actual_dash_speed
+			dash_end_velocity = Vector2.ZERO
 			$AnimatedSprite2D.play("dash")
 
 	# Apply Dash Velocity (Overrides Gravity/Normal Movement)
@@ -137,19 +146,19 @@ func _physics_process(delta):
 		var actual_dash_speed = dash_speed
 		if dash_direction.x != 0.0 and dash_direction.y != 0.0:
 			actual_dash_speed *= diagonal_dash_speed_modifier
-		current_velocity = dash_direction * actual_dash_speed
+		velocity = dash_direction * actual_dash_speed
+	
+	## ADDED: Update the state tracker for the next frame.
+	was_in_air = not is_on_floor()
 
-	velocity = current_velocity
-	move_and_slide()
 
 func _on_DashTimer_timeout():
 	is_dashing = false
-	dash_end_velocity = velocity # Store velocity to start deceleration
+	dash_end_velocity = velocity
 
-	# Handle specific up-dash ending: kill vertical velocity instantly
 	if dash_direction.y < 0:
 		velocity.y = 0
-		dash_end_velocity.y = 0 # Ensure no lingering Y deceleration if it was an up-dash
+		dash_end_velocity.y = 0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group('spikes'):
